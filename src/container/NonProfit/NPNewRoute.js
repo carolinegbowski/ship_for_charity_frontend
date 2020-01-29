@@ -10,7 +10,7 @@ function NPNewRoute() {
   const [arrivalLocation, setArrivalLocation] = useState('');
   const [arrivalDate, setArrivalDate] = useState('');
   const [openRoutes, setOpenRoutes] = useState([]);
-  const [routeID, setRouteID] = useState('');
+  const [routeID, setRouteID] = useState(null);
   const [containers, setContainers] = useState('');
 
   let searchFlaskEndpoint = 'np_search_routes';
@@ -257,12 +257,14 @@ function NPNewRoute() {
         </form>
         </Box>
       </Flex>
-
       <Flex style={containerStyles}>
           <Box style={boxStyles}>
-              {showOpenRoutes}
+              {routeID ? <Text style={textStyles}> Successfully claimed {containers} containers! </Text> :
+              showOpenRoutes
+              }
           </Box>
       </Flex>
+      }
       </div>
     </div>
   )
