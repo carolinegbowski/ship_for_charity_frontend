@@ -66,8 +66,8 @@ function LoginInfo(props) {
     };
 
     const boxStyles = {
-          height: '310px',
-          minWidth: '650px',
+          height: '370px',
+          minWidth: '790px',
           marginTop: '0px',
           padding: '1% 2%',
           textAlign: 'left',
@@ -96,7 +96,7 @@ function LoginInfo(props) {
     const labelStyles = {
         width: '100px',
         paddingRight: '10px',
-        color: 'white',
+        color: '#ffffff',
         fontFamily: 'Raleway',
         fontSize: '20px'
     };

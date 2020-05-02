@@ -30,8 +30,8 @@ function LoginHome(props) {
     };
 
     const boxStyles = {
-          height: '310px',
-          minWidth: '300px',
+          height: '370px',
+          minWidth: '370px',
           // marginTop: '0px',
           // backgroundColor: '#eef5ff',
           backgroundColor: 'rgb(33,60,71)',
@@ -50,7 +50,7 @@ function LoginHome(props) {
   
     const textStyles = {
           // padding: '10px 0px',
-          color: 'white',
+          color: '#ffffff',
           // fontFamily: 'Raleway',
           fontSize: '45px',
           fontWeight: 'bold'

@@ -28,7 +28,7 @@ function Header(props) {
   };
 
   const companyNameStyles = {
-    color: '#eef0ff',
+    color: '#ffffff',
     fontFamily: 'Raleway',
     // textShadow: 'white 1px 0 10px',
     // textShadow: '-2px 0px 0 #D9D9D9',

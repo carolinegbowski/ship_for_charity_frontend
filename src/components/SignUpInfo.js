@@ -107,7 +107,7 @@ function SignUpInfo(props) {
     const textStyles = {
         padding: '10px 0px 25px 0px',
         // color: 'rgb(33,60,71)',
-        color: 'white',
+        color: '#ffffff',
         fontSize: '34px',
         // fontWeight: 'bold'
     };
