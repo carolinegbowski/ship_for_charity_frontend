@@ -19,37 +19,43 @@ function Header(props) {
   let userType = sessionStorage.getItem('user_type')
 
   const headerStyles = {
-    height: '70px',
-    padding: '12px 0 0 0',
+    // height: '70px',
     backgroundColor: 'rgb(33,60,71)',
-    justifyContent: 'center'
+    justifyContent: 'space-between',
+    paddingTop: '10px'
+    // padding: '12px 0 0 0',
+    // justifyContent: 'center'
   };
 
-  const homeLinkStyles = {
+  const companyNameStyles = {
     color: '#eef0ff',
-    fontFamily: 'Work Sans',
+    fontFamily: 'Raleway',
+    // textShadow: 'white 1px 0 10px',
+    // textShadow: '-2px 0px 0 #D9D9D9',
     fontSize: '40px',
     fontWeight: 'bold',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    paddingLeft: '15px',
   };
 
   const iconStyles = {
     height: '55px',
     width: '55px',
-    marginTop: '-4px',
-    marginRight: '15px',
+    marginTop: '5px',
+    // marginRight: '15px',
+    // marginLeft: '15px',
     backgroundColor: '#eef0ff',
-    borderStyle: 'solid',
-    borderColor: '#eef0ff',
+    // borderStyle: 'solid',
+    // borderColor: '#eef0ff',
     borderRadius: '3px'
   };
 
   const mapStyles = { 
-    flexWrap: 'row',
-    width: '100%',
-    textAlign: 'center',
-    justifyContent: 'center',
-    alignItems: 'center'
+    // flexWrap: 'row',
+    // width: '100%',
+    // textAlign: 'center',
+    // justifyContent: 'center',
+    // alignItems: 'center'
   };
 
   return (
@@ -57,13 +63,15 @@ function Header(props) {
 
       {/* HEADER NAV BAR */}
       <Flex style={headerStyles}>
-
-        <Flex width='900px' justifyContent='space-between'>
-          <Text style={homeLinkStyles}>Ship For Charity</Text>
-
-          { (userType === 'shipper') && <ShipperHeader id={props.id} setID={props.setID}/> } 
-          { (userType === 'np') &&  <NPHeader  id={props.id} setID={props.setID}/> }
-
+      {/* width='900px' justifyContent='space-between' */}
+        {/* <Flex > */}
+          <Text style={companyNameStyles}>Ship for Charity</Text>
+        
+        <Flex>
+          <div>
+            { (userType === 'shipper') && <ShipperHeader id={props.id} setID={props.setID}/> } 
+            { (userType === 'np') &&  <NPHeader  id={props.id} setID={props.setID}/> }
+          </div>
           <Box styles={iconStyles}>
             { (userType === null || userType === "logout") && 
                                     (<div>
@@ -74,6 +82,8 @@ function Header(props) {
             { (userType === 'np') &&  <Image src={nonprofitIcon} style={iconStyles} /> }
           </Box>
         </Flex>
+          
+        {/* </Flex> */}
       </Flex>
 
       {/* MAP */}

@@ -13,6 +13,9 @@ import shipperIcon from '../images/shipper1.png';
 import nonprofitIcon from '../images/ribbon.png';
 
 
+
+// TODO: animation here onclick so that logo stays in the same spot 
+
 function LoginHome(props) {
 
     const [hasChosen, setHasChosen] = useState('')
@@ -29,13 +32,15 @@ function LoginHome(props) {
     const boxStyles = {
           height: '310px',
           minWidth: '300px',
-          marginTop: '0px',
-          backgroundColor: '#eef5ff',
-          borderStyle: 'solid',
-          borderWidth: '1px',
-          borderRadius: '4px',
-          borderColor: '#bbbbbb',
-          boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
+          // marginTop: '0px',
+          // backgroundColor: '#eef5ff',
+          backgroundColor: 'rgb(33,60,71)',
+
+          // borderStyle: 'solid',
+          // borderWidth: '1px',
+          // borderRadius: '4px',
+          // borderColor: '#bbbbbb',
+          // boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
     };
 
     const imageStyles = {
@@ -44,10 +49,10 @@ function LoginHome(props) {
     }
   
     const textStyles = {
-          padding: '10px 0px',
-          color: 'rgb(33,60,71)',
-          fontFamily: 'Work Sans',
-          fontSize: '34px',
+          // padding: '10px 0px',
+          color: 'white',
+          // fontFamily: 'Raleway',
+          fontSize: '45px',
           fontWeight: 'bold'
     };
 
@@ -65,7 +70,7 @@ function LoginHome(props) {
             <Box className='box-button' style={boxStyles}
                   onClick={(e)=>setHasChosen('shipper')}>
               <Image src={shipperIcon} style={imageStyles} />
-              <Text style={textStyles}>Shipper</Text>
+              <Text style={textStyles}>SHIPPER</Text>
             </Box>
 
             <Box minWidth='50px' />
@@ -73,7 +78,7 @@ function LoginHome(props) {
             <Box className='box-button' style={boxStyles}
                   onClick={(e)=>setHasChosen('np')}>
               <Image src={nonprofitIcon} style={imageStyles} />
-              <Text style={textStyles}>Nonprofit</Text>
+              <Text style={textStyles}>NONPROFIT</Text>
             </Box>
 
             {/* <Box height='283px' width='50%' /> */}

@@ -49,7 +49,6 @@ function LoginInfo(props) {
         }
     }
 
-    // Search button works with keyboard ENTER or RETURN
     const onFormSubmit = e => {
       e.preventDefault();
       if (username && password) {
@@ -72,41 +71,42 @@ function LoginInfo(props) {
           marginTop: '0px',
           padding: '1% 2%',
           textAlign: 'left',
-          fontFamily: 'Work Sans',
-          backgroundColor: '#eef5ff',
-          borderStyle: 'solid',
-          borderWidth: '1px',
-          borderRadius: '5px',
-          borderColor: '#bbbbbb',
-          boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
+          fontFamily: 'Raleway',
+          backgroundColor: 'rgb(33,60,71)',
+          // borderStyle: 'solid',
+          // borderWidth: '1px',
+          // borderRadius: '5px',
+          // borderColor: '#bbbbbb',
+          // boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
     };
 
     const textStyles = {
-          padding: '10px 0px 25px 0px',
-          color: 'rgb(33,60,71)',
-          fontSize: '34px',
-          fontWeight: 'bold'
+        padding: '10px 0px 25px 0px',
+        // color: 'rgb(33,60,71)',
+        color: 'white',
+        fontSize: '34px',
+        // fontWeight: 'bold'
     };
 
     const flexStyles = {
-          width: '350px',
-          justifyContent: 'space-between'
+        width: '350px',
+        justifyContent: 'space-between'
     }
 
     const labelStyles = {
-          width: '100px',
-          paddingRight: '10px',
-          color: '#000000',
-          fontFamily: 'Work Sans',
-          fontSize: '25px'
+        width: '100px',
+        paddingRight: '10px',
+        color: 'white',
+        fontFamily: 'Raleway',
+        fontSize: '20px'
     };
 
     const inputStyles = {
-          height: '30px',
-          width: '200px',
-          borderStyle: 'solid',
-          borderWidth: '2px',
-          borderColor: '#aaaaaa'
+        height: '30px',
+        width: '200px',
+        borderStyle: 'solid',
+        borderWidth: '2px',
+        borderColor: '#aaaaaa'
     };
 
     const imageStyles = {
@@ -114,6 +114,16 @@ function LoginInfo(props) {
         marginTop: '30px',
         paddingBottom: '0px',
     }
+    // need to fix color onclick 
+    const buttonStyles = {
+        width: '100px',
+        backgroundColor: 'white',
+        color: 'rgb(33,60,71)',
+        borderRadius: '0px',
+
+
+
+  }
 
     return(
       <div>
@@ -128,7 +138,7 @@ function LoginInfo(props) {
                   <div>
 
                     { (props.hasChosen === 'shipper') ? 
-                        <Text style={textStyles}>Shipper Login</Text> : 
+                        <Text style={textStyles}>SHIPPER LOGIN</Text> : 
                         <Text style={textStyles}>Nonprofit Login</Text> }
                     
                     <Flex style={flexStyles}>
@@ -152,14 +162,14 @@ function LoginInfo(props) {
                 </Flex>
 
                 <Flex width={3/5} justifyContent='space-between' marginTop='40px'>
-                    <Button type='submit' sx={{color: '#eef5ff', backgroundColor: 'rgb(33, 60, 71)'}}>
+                    <Button type='submit' style={buttonStyles}>
                       Login
                     </Button>
-                    <Button sx={{color: '#eef5ff', backgroundColor: 'rgb(33, 60, 71)'}}
+                    <Button style={buttonStyles}
                             onClick={(e)=>setNewClient(true)}>
                       Sign Up
                     </Button>
-                    <Button sx={{color: '#eef5ff', backgroundColor: 'rgb(33, 60, 71)'}}
+                    <Button style={buttonStyles}
                             onClick={(e) => window.location.reload()}>
                       Cancel
                     </Button>

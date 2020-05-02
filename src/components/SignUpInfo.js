@@ -62,6 +62,7 @@ function SignUpInfo(props) {
                 props.flask((flaskEndpoint + "_create_account"), data)
             } 
         } catch (err) {
+            
           console.log(err)
         }
     }
@@ -93,20 +94,22 @@ function SignUpInfo(props) {
         marginTop: '0px',
         padding: '1% 2%',
         textAlign: 'left',
-        fontFamily: 'Work Sans',
-        backgroundColor: '#eef5ff',
-        borderStyle: 'solid',
-        borderWidth: '1px',
-        borderRadius: '5px',
-        borderColor: '#bbbbbb',
-        boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
+        fontFamily: 'Raleway',
+        backgroundColor: 'rgb(33,60,71)',
+        // backgroundColor: '#eef5ff',
+        // borderStyle: 'solid',
+        // borderWidth: '1px',
+        // borderRadius: '5px',
+        // borderColor: '#bbbbbb',
+        // boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
     };
 
     const textStyles = {
         padding: '10px 0px 25px 0px',
-        color: 'rgb(33,60,71)',
+        // color: 'rgb(33,60,71)',
+        color: 'white',
         fontSize: '34px',
-        fontWeight: 'bold'
+        // fontWeight: 'bold'
     };
 
     const flexStyles = {
@@ -117,9 +120,9 @@ function SignUpInfo(props) {
     const labelStyles = {
         width: '100px',
         paddingRight: '10px',
-        color: '#000000',
-        fontFamily: 'Work Sans',
-        fontSize: '25px'
+        color: 'white',
+        fontFamily: 'Raleway',
+        fontSize: '20px'
     };
 
     const inputStyles = {
@@ -135,6 +138,14 @@ function SignUpInfo(props) {
       marginTop: '30px',
       paddingBottom: '0px',
     };
+
+    const buttonStyles = {
+        width: '150px',
+        backgroundColor: 'white',
+        color: 'rgb(33,60,71)',
+        borderRadius: '0px',
+    };
+
 
     return(
         <Flex style={containerStyles}>
@@ -190,11 +201,10 @@ function SignUpInfo(props) {
                     <br/>
 
                     <Flex justifyContent='space-between'>
-                        <Button sx={{color: '#eef5ff', backgroundColor: 'rgb(33, 60, 71)'}}
-                                type='submit'>
+                        <Button style={buttonStyles} type='submit'>
                             Create Account
                         </Button>
-                        <Button sx={{color: '#eef5ff', backgroundColor: 'rgb(33, 60, 71)'}}
+                        <Button style={buttonStyles}
                                 onClick={(e) => window.location.reload()}>
                             Cancel
                         </Button>
