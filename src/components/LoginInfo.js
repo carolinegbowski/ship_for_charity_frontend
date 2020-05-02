@@ -15,7 +15,7 @@ import SignUpInfo from './SignUpInfo'
 
 function LoginInfo(props) {
     // const [company, setCompany] = useState('')
-    const [username, setUsername] = useState(null)
+    const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
     const [newClient, setNewClient] = useState(false)
 
@@ -23,7 +23,7 @@ function LoginInfo(props) {
 
     const data = {
         // company: company,
-        username: username, 
+        email: email, 
         password: password
     }
 
@@ -51,7 +51,7 @@ function LoginInfo(props) {
 
     const onFormSubmit = e => {
       e.preventDefault();
-      if (username && password) {
+      if (email && password) {
         flask((flaskEndpoint + "_login"), data);
       };
     };
@@ -142,9 +142,9 @@ function LoginInfo(props) {
                         <Text style={textStyles}>Nonprofit Login</Text> }
                     
                     <Flex style={flexStyles}>
-                        <label style={labelStyles}>Username:</label>
+                        <label style={labelStyles}>Email:</label>
                         <input style={inputStyles} 
-                                onChange={(e)=>setUsername(String(e.target.value))} />
+                                onChange={(e)=>setEmail(String(e.target.value))} />
                     </Flex>
                     <br/>
 
