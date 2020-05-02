@@ -8,20 +8,27 @@ import { Link } from 'react-router-dom';
 import { checkPropTypes } from 'prop-types';
 
 const headerLinkStyles = {
-  marginTop: '10px',
+  width: '150px',
+  marginTop: '15px',
   padding: '4px 4px',
-  background: '#eef0ff',
+  background: '#white',
   color: 'rgb(33,60,71)',
-  fontFamily: 'Work Sans',
+  fontFamily: 'Raleway',
   fontSize: '15px',
   fontWeight: 'bold',
   borderWidth: '0px',
-  borderRadius: '3px',
+  // borderRadius: '3px',
   textDecoration: 'none',
-  whiteSpace: 'nowrap'
+  whiteSpace: 'nowrap',
+  textAlign: 'center'
 }
 
-
+const buttonStyles = {
+  width: '150px',
+  backgroundColor: 'white',
+  color: 'rgb(33,60,71)',
+  borderRadius: '0px',
+};
 function NPHeader(props) {
 
 
@@ -33,7 +40,7 @@ function NPHeader(props) {
 
   return (
     <nav>
-      <Flex>
+      <Flex paddingRight='20px'>
         <Link to='/nonprofit/previousroutes' style={headerLinkStyles}>
           Previous Routes</Link>
 

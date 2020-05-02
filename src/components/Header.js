@@ -35,13 +35,13 @@ function Header(props) {
     fontSize: '40px',
     fontWeight: 'bold',
     textDecoration: 'none',
-    paddingLeft: '15px',
+    paddingLeft: '20px',
   };
 
   const iconStyles = {
     height: '55px',
     width: '55px',
-    marginTop: '5px',
+    marginRight: '20px',
     // marginRight: '15px',
     // marginLeft: '15px',
     backgroundColor: '#eef0ff',
