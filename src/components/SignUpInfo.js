@@ -11,10 +11,10 @@ import nonprofitIcon from '../images/ribbon.png';
 
 function SignUpInfo(props) {
     const [email, setEmail] = useState(null);
-    const [username, setUsername] = useState(null);
+    // const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
     const [company, setCompany] = useState(null);
-    const [EIN, setEIN] = useState(null);
+    const [ein, setEin] = useState(null);
     const [invalidMessage, setInvalidMessage] = useState(null);
 
     
@@ -23,23 +23,24 @@ function SignUpInfo(props) {
     if (props.hasChosen === 'shipper') {
         data = {
             company: company,
-            username: username, 
+            // username: username,
+            email: email, 
             password: password,
-            email: email
         };
     } else {
         data = {
-            EIN: EIN,
-            username: username, 
+            ein: ein,
+            company: company,
+            // username: username,
+            email: email, 
             password: password,
-            email: email
         };
     }
 
-    async function EINFlask(EIN, flaskEndpoint, data) {
+    async function EINFlask(ein, flaskEndpoint, data) {
         try {
           const endpoint = `http://localhost:5000/api/np_check_EIN`
-          const EINdata = {EIN: EIN}
+          const EINdata = {ein: ein}
           const configs = {
             method: 'POST',
             body: JSON.stringify(EINdata),
@@ -53,9 +54,9 @@ function SignUpInfo(props) {
             } else {
                 let companyName = json_res['data']['Company Name']
                 data = {
-                EIN: EIN,
+                ein: ein,
                 companyName: companyName,
-                username: username, 
+                // username: username, 
                 password: password,
                 email: email
                 }
@@ -70,11 +71,11 @@ function SignUpInfo(props) {
     // Search button works with keyboard ENTER or RETURN
     const onFormSubmit = e => {
         e.preventDefault();
-        if (username && password && (company || EIN)) {
+        if (email && password && (company || ein)) {
             if (props.hasChosen === 'shipper') {
                 props.flask((flaskEndpoint + "_create_account"), data);
             } else {
-                EINFlask(EIN, flaskEndpoint, data)
+                EINFlask(ein, flaskEndpoint, data)
             }
         }
     };
@@ -134,8 +135,8 @@ function SignUpInfo(props) {
     };
 
     const imageStyles = {
-      height: '160px',
-      marginTop: '30px',
+      height: '200px',
+      marginTop: '60px',
       paddingBottom: '0px',
     };
 
@@ -168,10 +169,16 @@ function SignUpInfo(props) {
                         </Flex> :
                         <div>
                             <Flex style={flexStyles}>
-                            <label style={labelStyles}>EIN:</label>
-                            <input style={inputStyles} 
-                                    onChange={(e)=>setEIN(String(e.target.value))} />
+                                <label style={labelStyles}>EIN:</label>
+                                <input style={inputStyles} 
+                                        onChange={(e)=>setEin(String(e.target.value))} />
                             </Flex> 
+                            <br/>
+                            <Flex style={flexStyles}>
+                                <label style={labelStyles}>Company:</label>
+                                <input style={inputStyles} 
+                                        onChange={(e)=>setCompany(String(e.target.value))} />
+                            </Flex>
                             <Flex>
                                 {invalidMessage ? <p>{ invalidMessage }</p> : <p></p>}
                             </Flex>
@@ -180,9 +187,9 @@ function SignUpInfo(props) {
                     
                     <br/>
                     <Flex style={flexStyles}>
-                        <label style={labelStyles}>Username:</label>
+                        <label style={labelStyles}>Email:</label>
                         <input style={inputStyles} 
-                                onChange={(e)=>setUsername(String(e.target.value))} />
+                                onChange={(e)=>setEmail(String(e.target.value))} />
                     </Flex>
                     <br/>
 
@@ -193,12 +200,12 @@ function SignUpInfo(props) {
                     </Flex>
                     <br/>
 
-                    <Flex style={flexStyles}>
+                    {/* <Flex style={flexStyles}>
                         <label style={labelStyles}>Email:</label>
                         <input type="email" style={inputStyles} 
                                 onChange={(e)=>setEmail(String(e.target.value))} />
-                    </Flex>
-                    <br/>
+                    </Flex> */}
+                    {/* <br/> */}
 
                     <Flex justifyContent='space-between'>
                         <Button style={buttonStyles} type='submit'>

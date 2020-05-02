@@ -110,8 +110,8 @@ function LoginInfo(props) {
     };
 
     const imageStyles = {
-        height: '160px',
-        marginTop: '30px',
+        height: '200px',
+        marginTop: '60px',
         paddingBottom: '0px',
     }
     // need to fix color onclick 
