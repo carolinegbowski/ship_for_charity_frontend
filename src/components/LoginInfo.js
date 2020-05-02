@@ -130,7 +130,7 @@ function LoginInfo(props) {
         { newClient ? <SignUpInfo flask={flask} setID={props.setID} hasChosen={props.hasChosen}/> : 
           <Flex style={containerStyles}>
 
-            <Image src={waves} height='283px' width='50%' />
+            <Image src={waves} width='50%' />
 
             <Box style={boxStyles}>
               <form onSubmit={e => onFormSubmit(e)}>
@@ -177,7 +177,7 @@ function LoginInfo(props) {
               </form>
             </Box>
             
-            <Image src={waves} height='283px' width='50%' />
+            <Image src={waves}  width='50%' />
 
           </Flex>
           }

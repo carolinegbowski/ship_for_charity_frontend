@@ -90,7 +90,7 @@ function SignUpInfo(props) {
 
     const boxStyles = {
         height: '370px',
-        minWidth: '650px',
+        minWidth: '790px',
         marginTop: '0px',
         padding: '1% 2%',
         textAlign: 'left',
@@ -150,7 +150,7 @@ function SignUpInfo(props) {
     return(
         <Flex style={containerStyles}>
 
-        <Image src={waves} height='283px' width='50%' />
+        <Image src={waves} width='50%' />
 
         <Box style={boxStyles}>
           <form onSubmit={e => onFormSubmit(e)}>
@@ -218,7 +218,7 @@ function SignUpInfo(props) {
           </form>
         </Box>
         
-        <Image src={waves} height='283px' width='50%' />
+        <Image src={waves} width='50%' />
 
         </Flex>
     )

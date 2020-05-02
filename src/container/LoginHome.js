@@ -45,7 +45,7 @@ function LoginHome(props) {
 
     const imageStyles = {
           height: '200px',
-          marginTop: '30px'
+          marginTop: '60px'
     }
   
     const textStyles = {
@@ -65,7 +65,7 @@ function LoginHome(props) {
           <Flex style={containerStyles}>
 
             {/* <Box height='283px' width='50%' /> */}
-            <Image src={waves} height='283px' width='50%' />
+            <Image src={waves} width='50%' />
 
             <Box className='box-button' style={boxStyles}
                   onClick={(e)=>setHasChosen('shipper')}>
@@ -82,7 +82,7 @@ function LoginHome(props) {
             </Box>
 
             {/* <Box height='283px' width='50%' /> */}
-            <Image src={waves} height='283px' width='50%' />
+            <Image src={waves} width='50%' />
 
           </Flex>
         }
