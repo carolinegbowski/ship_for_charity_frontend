@@ -73,6 +73,7 @@ function LoginInfo(props) {
           textAlign: 'left',
           fontFamily: 'Raleway',
           backgroundColor: 'rgb(33,60,71)',
+          alignItems: 'center'
           // borderStyle: 'solid',
           // borderWidth: '1px',
           // borderRadius: '5px',
@@ -129,8 +130,10 @@ function LoginInfo(props) {
       <div>
         { newClient ? <SignUpInfo flask={flask} setID={props.setID} hasChosen={props.hasChosen}/> : 
           <Flex style={containerStyles}>
-
+            
+            
             <Image src={waves} width='50%' />
+            
 
             <Box style={boxStyles}>
               <form onSubmit={e => onFormSubmit(e)}>
@@ -177,7 +180,9 @@ function LoginInfo(props) {
               </form>
             </Box>
             
-            <Image src={waves}  width='50%' />
+         
+            <Image src={waves} width='50%' />
+            
 
           </Flex>
           }

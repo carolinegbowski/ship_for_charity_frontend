@@ -151,81 +151,81 @@ function SignUpInfo(props) {
     return(
         <Flex style={containerStyles}>
 
-        <Image src={waves} width='50%' />
+            <Image src={waves} width='50%' />
 
-        <Box style={boxStyles}>
-          <form onSubmit={e => onFormSubmit(e)}>
-            <Flex justifyContent='space-between'>
-                <div>
-                    { (props.hasChosen === 'shipper') ? 
-                        <Text style={textStyles}>Shipper Sign Up</Text> : 
-                        <Text style={textStyles}>Nonprofit Sign Up</Text> }
-                    
-                    { (props.hasChosen === 'shipper') ? 
-                        <Flex style={flexStyles}>
-                            <label style={labelStyles}>Company:</label>
-                            <input style={inputStyles} 
-                                    onChange={(e)=>setCompany(String(e.target.value))} />
-                        </Flex> :
-                        <div>
-                            <Flex style={flexStyles}>
-                                <label style={labelStyles}>EIN:</label>
-                                <input style={inputStyles} 
-                                        onChange={(e)=>setEin(String(e.target.value))} />
-                            </Flex> 
-                            <br/>
+            <Box style={boxStyles}>
+            <form onSubmit={e => onFormSubmit(e)}>
+                <Flex justifyContent='space-between'>
+                    <div>
+                        { (props.hasChosen === 'shipper') ? 
+                            <Text style={textStyles}>Shipper Sign Up</Text> : 
+                            <Text style={textStyles}>Nonprofit Sign Up</Text> }
+                        
+                        { (props.hasChosen === 'shipper') ? 
                             <Flex style={flexStyles}>
                                 <label style={labelStyles}>Company:</label>
                                 <input style={inputStyles} 
                                         onChange={(e)=>setCompany(String(e.target.value))} />
-                            </Flex>
-                            <Flex>
-                                {invalidMessage ? <p>{ invalidMessage }</p> : <p></p>}
-                            </Flex>
-                        </div>
-                    }
-                    
-                    <br/>
-                    <Flex style={flexStyles}>
-                        <label style={labelStyles}>Email:</label>
-                        <input style={inputStyles} 
-                                onChange={(e)=>setEmail(String(e.target.value))} />
-                    </Flex>
-                    <br/>
+                            </Flex> :
+                            <div>
+                                <Flex style={flexStyles}>
+                                    <label style={labelStyles}>EIN:</label>
+                                    <input style={inputStyles} 
+                                            onChange={(e)=>setEin(String(e.target.value))} />
+                                </Flex> 
+                                <br/>
+                                <Flex style={flexStyles}>
+                                    <label style={labelStyles}>Company:</label>
+                                    <input style={inputStyles} 
+                                            onChange={(e)=>setCompany(String(e.target.value))} />
+                                </Flex>
+                                <Flex>
+                                    {invalidMessage ? <p>{ invalidMessage }</p> : <p></p>}
+                                </Flex>
+                            </div>
+                        }
+                        
+                        <br/>
+                        <Flex style={flexStyles}>
+                            <label style={labelStyles}>Email:</label>
+                            <input style={inputStyles} 
+                                    onChange={(e)=>setEmail(String(e.target.value))} />
+                        </Flex>
+                        <br/>
 
-                    <Flex style={flexStyles}>
-                        <label style={labelStyles}>Password:</label>
-                        <input type="password" style={inputStyles} 
-                                onChange={(e)=>setPassword(String(e.target.value))} />
-                    </Flex>
-                    <br/>
+                        <Flex style={flexStyles}>
+                            <label style={labelStyles}>Password:</label>
+                            <input type="password" style={inputStyles} 
+                                    onChange={(e)=>setPassword(String(e.target.value))} />
+                        </Flex>
+                        <br/>
 
-                    {/* <Flex style={flexStyles}>
-                        <label style={labelStyles}>Email:</label>
-                        <input type="email" style={inputStyles} 
-                                onChange={(e)=>setEmail(String(e.target.value))} />
-                    </Flex> */}
-                    {/* <br/> */}
+                        {/* <Flex style={flexStyles}>
+                            <label style={labelStyles}>Email:</label>
+                            <input type="email" style={inputStyles} 
+                                    onChange={(e)=>setEmail(String(e.target.value))} />
+                        </Flex> */}
+                        {/* <br/> */}
 
-                    <Flex justifyContent='space-between'>
-                        <Button style={buttonStyles} type='submit'>
-                            Create Account
-                        </Button>
-                        <Button style={buttonStyles}
-                                onClick={(e) => window.location.reload()}>
-                            Cancel
-                        </Button>
-                    </Flex>
-                </div>
+                        <Flex justifyContent='space-between'>
+                            <Button style={buttonStyles} type='submit'>
+                                Create Account
+                            </Button>
+                            <Button style={buttonStyles}
+                                    onClick={(e) => window.location.reload()}>
+                                Cancel
+                            </Button>
+                        </Flex>
+                    </div>
 
-                { (props.hasChosen === 'shipper') ? 
-                    <Image src={shipperIcon} style={imageStyles} /> : 
-                    <Image src={nonprofitIcon} style={imageStyles} /> }
-            </Flex>
-          </form>
-        </Box>
+                    { (props.hasChosen === 'shipper') ? 
+                        <Image src={shipperIcon} style={imageStyles} /> : 
+                        <Image src={nonprofitIcon} style={imageStyles} /> }
+                </Flex>
+            </form>
+            </Box>
         
-        <Image src={waves} width='50%' />
+            <Image src={waves} width='50%' />
 
         </Flex>
     )
