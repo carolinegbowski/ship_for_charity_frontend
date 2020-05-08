@@ -142,7 +142,7 @@ function LoginInfo(props) {
 
                     { (props.hasChosen === 'shipper') ? 
                         <Text style={textStyles}>SHIPPER LOGIN</Text> : 
-                        <Text style={textStyles}>Nonprofit Login</Text> }
+                        <Text style={textStyles}>NONPROFIT LOGIN</Text> }
                     
                     <Flex style={flexStyles}>
                         <label style={labelStyles}>Email:</label>
@@ -164,7 +164,7 @@ function LoginInfo(props) {
                       <Image src={nonprofitIcon} style={imageStyles} /> }
                 </Flex>
 
-                <Flex width={3/5} justifyContent='space-between' marginTop='40px'>
+                <Flex width={1/2} justifyContent='space-between' marginTop='40px'>
                     <Button type='submit' style={buttonStyles}>
                       Login
                     </Button>

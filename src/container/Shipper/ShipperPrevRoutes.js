@@ -28,9 +28,9 @@ function ShipperPrevRoutes() {
   }
 
   const containerStyles = { 
-      flexWrap: 'row',
-      width: '100%',
-      paddingTop: '5%',
+      // flexWrap: 'row',
+      // width: '100%',
+      // paddingTop: '5%',
       textAlign: 'center',
       justifyContent: 'center',
       alignItems: 'center'
@@ -40,20 +40,20 @@ function ShipperPrevRoutes() {
       minWidth: '600px',
       marginTop: '0px',
       textAlign: 'left',
-      fontFamily: 'Work Sans',
-      backgroundColor: '#eef5ff',
-      borderStyle: 'solid',
-      borderWidth: '1px',
-      borderRadius: '4px',
-      borderColor: '#bbbbbb',
-      boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
+      fontFamily: 'Raleway',
+      // backgroundColor: '#eef5ff',
+      // borderStyle: 'solid',
+      // borderWidth: '1px',
+      // borderRadius: '4px',
+      // borderColor: '#bbbbbb',
+      // boxShadow: '2px 2px 3px -1px rgb(120, 120, 120)',
       justifyContent: 'center'
   };
 
   const textStyles = {
       padding: '35px 0px 0px 0px',
       color: 'rgb(33,60,71)',
-      fontSize: '34px',
+      fontSize: '50px',
       fontWeight: 'bold'
   };
 
@@ -61,12 +61,14 @@ function ShipperPrevRoutes() {
     width: '80%',
     margin: '20px auto',
     paddingTop: '10px',
-    backgroundColor: 'rgb(53, 117, 159)',
+    backgroundColor: '#427E96', 
+    // or this #3A6D82
+
     fontSize: '15px',
-    borderStyle: 'solid',
-    borderWidth: '0px',
-    borderRadius: '4px',
-    boxShadow: '1px 1px 7px -2px rgb(0, 51, 128)',
+    // borderStyle: 'solid',
+    // borderWidth: '0px',
+    // borderRadius: '4px',
+    // boxShadow: '1px 1px 7px -2px rgb(0, 51, 128)',
   };
 
   const labelStyles = {
@@ -101,6 +103,20 @@ function ShipperPrevRoutes() {
     console.log("Previous Routes")
     console.log(previousRoutes)
     openRoutes = previousRoutes.map((data) => (
+      
+      // <Box>
+      //   <Flex style={}>
+      //     <div>Departure Location</div>
+      //     <div>Departure Date</div>
+      //     <div>Arrival Location</div>
+      //     <div>Arrival Date</div>
+      //     <div>Total Available Containers</div>
+      //     <div>Donated Containers</div>
+      //     <div>Empty Containers</div>
+      //   </Flex>
+      // </Box>
+      
+      
       <Box style={gridStyles}>
         
         <div style={labelStyles}><p>{data[1]}</p></div>
