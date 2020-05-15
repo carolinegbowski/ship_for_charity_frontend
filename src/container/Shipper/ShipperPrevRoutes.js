@@ -58,6 +58,7 @@ function ShipperPrevRoutes() {
   };
 
   const gridStyles = {
+    flexDirection: 'column',
     width: '80%',
     margin: '20px auto',
     paddingTop: '10px',
@@ -72,81 +73,86 @@ function ShipperPrevRoutes() {
   };
 
   const labelStyles = {
-      paddingLeft: '10px',
+      padding: '5px',
       color: '#ffffff',
-      fontSize: '21px'
+      fontSize: '20px',
+      textAlign: 'left', 
+      width: '100%',
+      textAlign: 'center'
+      // width: '100%'
   };
 
-  const columnStyles = {
-      width: '49.7%',
-      margin: '0px',
-      padding: '0px',
-      borderStyle: 'solid',
-      borderColor: 'rgb(0, 51, 128)',
-      borderWidth: '0px 1px 0px 1px',
-  };
+  // const columnStyles = {
+  //     width: '49.7%',
+  //     margin: '0px',
+  //     padding: '0px',
+  //     borderStyle: 'solid',
+  //     borderColor: 'rgb(0, 51, 128)',
+  //     borderWidth: '0px 1px 0px 1px',
+  // };
 
   const cellStyles = {
+      paddingTop: '10px',
       width: '100%',
       height: '30px',
-      paddingLeft: '3px',
       backgroundColor: '#ffffff',
       color: '#000000',
       fontSize: '16px',
       borderStyle: 'solid',
-      borderColor: 'rgb(0, 51, 128)',
+      borderColor: '#427E96',
       borderWidth: '0px 0px 1px 0px',
+      textAlign: 'center'
   };
 
-  let openRoutes = <div></div>;
+  let routeDisplay = <div></div>;
   if (previousRoutes) {
     console.log("Previous Routes")
     console.log(previousRoutes)
-    openRoutes = previousRoutes.map((data) => (
+    routeDisplay = previousRoutes.map((data) => (
       
-      // <Box>
-      //   <Flex style={}>
-      //     <div>Departure Location</div>
-      //     <div>Departure Date</div>
-      //     <div>Arrival Location</div>
-      //     <div>Arrival Date</div>
-      //     <div>Total Available Containers</div>
-      //     <div>Donated Containers</div>
-      //     <div>Empty Containers</div>
-      //   </Flex>
-      // </Box>
-      
-      
-      <Box style={gridStyles}>
-        
-        <div style={labelStyles}><p>{data[1]}</p></div>
-        <br/>
-
-        <Flex>
-          <Box style={columnStyles}>
-            <div style={cellStyles}><p>Departure Location</p></div>
-            <div style={cellStyles}><p>Departure Date</p></div>
-            <div style={cellStyles}><p>Arrival Location</p></div>
-            <div style={cellStyles}><p>Arrival Date</p></div>
-            <div style={cellStyles}><p>Total Containers</p></div>
-            <div style={cellStyles}><p>Charity Containers</p></div>
-            <div style={cellStyles}><p>Empty Containers</p></div>
-          </Box>
-
-          <Box style={columnStyles}>
-            <div style={cellStyles}><p>{ data[3] }</p></div>
-            <div style={cellStyles}><p>{ moment.unix(data[4]).format("MM/DD/YYYY") }</p></div>
-            <div style={cellStyles}><p>{ data[5] }</p></div>
-            <div style={cellStyles}><p>{ moment.unix(data[6]).format("MM/DD/YYYY") }</p></div>
-            <div style={cellStyles}><p>{ data[7] }</p></div>
-            <div style={cellStyles}><p>{ data[7] - data[8] }</p></div>
-            <div style={cellStyles}><p>{ data[8] }</p></div>
-
-          </Box>
+      <Box>
+        <Flex >
+          <div style={cellStyles}><p>{ data[3] }</p></div>
+          <div style={cellStyles}><p>{ moment.unix(data[4]).format("MM/DD/YYYY") }</p></div>
+          <div style={cellStyles}><p>{ data[5] }</p></div>
+          <div style={cellStyles}><p>{ moment.unix(data[6]).format("MM/DD/YYYY") }</p></div>
+          <div style={cellStyles}><p>{ data[7] }</p></div>
+          <div style={cellStyles}><p>{ data[7] - data[8] }</p></div>
+          <div style={cellStyles}><p>{ data[8] }</p></div>
         </Flex>
-
-        <br/>
       </Box>
+      
+      
+      // <Box style={gridStyles}>
+        
+      //   <div style={labelStyles}><p>{data[1]}</p></div>
+      //   <br/>
+
+      //   <Flex>
+      //     <Box style={columnStyles}>
+      //       <div style={cellStyles}><p>Departure Location</p></div>
+      //       <div style={cellStyles}><p>Departure Date</p></div>
+      //       <div style={cellStyles}><p>Arrival Location</p></div>
+      //       <div style={cellStyles}><p>Arrival Date</p></div>
+      //       <div style={cellStyles}><p>Total Containers</p></div>
+      //       <div style={cellStyles}><p>Charity Containers</p></div>
+      //       <div style={cellStyles}><p>Empty Containers</p></div>
+      //     </Box>
+
+      //     <Box style={columnStyles}>
+      //       <div style={cellStyles}><p>{ data[3] }</p></div>
+      //       <div style={cellStyles}><p>{ moment.unix(data[4]).format("MM/DD/YYYY") }</p></div>
+      //       <div style={cellStyles}><p>{ data[5] }</p></div>
+      //       <div style={cellStyles}><p>{ moment.unix(data[6]).format("MM/DD/YYYY") }</p></div>
+      //       <div style={cellStyles}><p>{ data[7] }</p></div>
+      //       <div style={cellStyles}><p>{ data[7] - data[8] }</p></div>
+      //       <div style={cellStyles}><p>{ data[8] }</p></div>
+
+      //     </Box>
+      //   </Flex>
+
+      //   <br/>
+      // </Box>
     ))
   } else {
     flask(flaskEndpoint, data)
@@ -160,8 +166,26 @@ function ShipperPrevRoutes() {
           <Text style={textStyles}>Previous Routes</Text>
         </Box><br/>
 
-        <div>{ openRoutes }</div>
+        <Flex style={gridStyles}>
 
+          <Flex >
+            <div style={labelStyles}>Departure Location</div>
+            <br/>
+            <div style={labelStyles}>Departure Date</div>
+            <div style={labelStyles}>Arrival Location</div>
+            <div style={labelStyles}>Arrival Date</div>
+            <div style={labelStyles}>Available Containers</div>
+            <div style={labelStyles}>Donated Containers</div>
+            <div style={labelStyles}>Empty Containers</div>
+          </Flex>
+          
+          
+          { routeDisplay }
+          
+
+        </Flex>
+        
+       
       </div>
     </Flex>    
   )
